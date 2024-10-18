@@ -1,6 +1,6 @@
 // Using the IRremote library: https://github.com/Arduino-IRremote/Arduino-IRremote
 #include <IRremote.hpp>
-#define IR_RECEIVE_PIN 7
+#define IR_RECEIVE_PIN 8
 
 void setup()
 {
