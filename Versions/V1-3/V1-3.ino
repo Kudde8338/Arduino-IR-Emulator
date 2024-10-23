@@ -1,5 +1,9 @@
+// Includerar script för att
 #include <IRremote.hpp>
 
+
+// Definitioner
+// Definiera pinnar för vart sändaren och vart mottagaren sitter på Arduino
 int irSendPin = 2;
 int IR_RECEIVE_PIN = 4;
 
@@ -28,10 +32,10 @@ int addressThree = 0x3000;
 int commandThree = 0x4F;
 String protocolThree = "NEC";
 
+// Definiera vilket läge Arduinon är i; "S" = Send, "R" = Receive
 String mode = "S";
 
 
-// Körs i början av programmet
 void setup() {
   Serial.begin(9600); // Initiera en port för att skicka debugging till
 
@@ -118,7 +122,6 @@ void irSend() {
 }
 
 void debug(IRData data) {
-
   IrReceiver.printIRResultShort(&Serial); // Skriver komplett mottagen data i en rad
   IrReceiver.printIRSendUsage(&Serial); // Skriver ut instruktion som krävs för att skicka motsvarande signal med IRTransmitter
   Serial.println("Address: ");
@@ -130,5 +133,4 @@ void debug(IRData data) {
   Serial.println("Protocol: ");
   Serial.println(data.protocol);
   Serial.println("");
-
 }
